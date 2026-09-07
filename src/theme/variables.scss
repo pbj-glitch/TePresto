@@ -1,2 +1,24 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+:root {
+  /* Color de Acento Principal: Coral */
+  --ion-color-primary: #FF6B6B; 
+  --ion-color-primary-rgb: 255, 107, 107;
+  --ion-color-primary-contrast: #FFFFFF;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #E05E5E;
+  --ion-color-primary-tint: #FF7A7A;
+
+  /* Color Secundario o Destacados Suaves */
+  --ion-color-secondary: #4A90E2; 
+  --ion-color-success: #2ECC71; /* Badges de "Disponible" */
+
+  /* Fondos Limpios (Predominio del Blanco) */
+  --ion-background-color: #FFFFFF;
+  --ion-background-color-rgb: 255, 255, 255;
+  
+  /* Tarjetas y Contenedores */
+  --ion-card-background: #FAFAFA; /* Gris casi blanco para dar contraste sutil */
+  --ion-toolbar-background: #FFFFFF;
+  --ion-tab-bar-background: #FFFFFF;
+}

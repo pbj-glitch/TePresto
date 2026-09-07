@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-title color="primary" class="ion-text-center"><b>TePresto</b> 🤝</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="light">
+    <ion-searchbar placeholder="Buscar en tu comunidad..."></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Grilla Dinámica con los datos del Servicio -->
+  <ion-grid>
+    <ion-row>
+      @for (item of items(); track item.id) {
+        <ion-col size="6">
+          <ion-card class="product-card">
+            <div class="image-container">
+              <img [src]="item.imageUrl" [alt]="item.title" />
+              <ion-badge 
+                [color]="item.status === 'Disponible' ? 'success' : 'medium'" 
+                class="status-badge">
+                {{ item.status }}
+              </ion-badge>
+            </div>
+            <ion-card-header>
+              <ion-card-title>{{ item.title }}</ion-card-title>
+              <ion-card-subtitle>{{ item.distance }} · {{ item.ownerName }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <span class="rating">⭐ {{ item.rating }}</span>
+              <span class="guarantee-price">${{ item.guaranteePrice / 1000 }}k garantía</span>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+
+  <!-- Banner para solicitar necesidades -->
+  <ion-card class="need-banner">
+    <ion-card-header>
+      <ion-card-title>¿No encuentras lo que buscas?</ion-card-title>
+      <ion-card-subtitle>Envía una solicitud a tus vecinos</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" fill="solid" color="primary">Publicar necesidad</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
