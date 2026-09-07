@@ -1,0 +1,7 @@
+{
+  "name": "TePresto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
