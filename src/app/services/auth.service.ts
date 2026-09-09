@@ -11,6 +11,7 @@ const ERROR_MESSAGES: Record<string, string> = {
   'User already registered': 'Ya existe una cuenta con este correo.',
   'Email not confirmed': 'Debes confirmar tu correo antes de iniciar sesión.',
   'Password should be at least 6 characters': 'La contraseña debe tener al menos 6 caracteres.',
+  'email rate limit exceeded': 'Se alcanzó el límite de envío de correos del proyecto. Intenta de nuevo más tarde.',
 };
 
 function translateError(message: string): string {
