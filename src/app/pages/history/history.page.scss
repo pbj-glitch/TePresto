@@ -1,0 +1,25 @@
+ion-content {
+  --background: #ffffff;
+}
+
+.date-heading {
+  color: var(--tp-text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: var(--tp-space-lg) var(--tp-space-xs) var(--tp-space-xs);
+}
+
+ion-list {
+  border-radius: var(--tp-radius-md);
+  overflow: hidden;
+}
+
+ion-item h3 {
+  font-weight: 600;
+}
+
+ion-item p {
+  color: var(--tp-text-muted);
+}

@@ -1,13 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>history</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-title color="primary" class="ion-text-center"><b>Historial</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">history</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  @for (group of groups(); track group.date) {
+    <p class="date-heading">{{ group.date }}</p>
+    <ion-list>
+      @for (entry of group.entries; track entry.id) {
+        <ion-item lines="full">
+          <ion-icon slot="start" name="cube-outline"></ion-icon>
+          <ion-label>
+            <h3>{{ entry.itemTitle }}</h3>
+            <p>{{ entry.counterpartName }}</p>
+          </ion-label>
+          <ion-badge slot="end" [color]="statusColor(entry.status)">{{ entry.status }}</ion-badge>
+        </ion-item>
+      }
+    </ion-list>
+  }
 </ion-content>

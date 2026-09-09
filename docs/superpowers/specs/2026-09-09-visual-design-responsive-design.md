@@ -113,15 +113,19 @@ Spanish titles ("Explorar", "Historial", "Publicar"). The bottom tab
 bar (`tabs.page.html`, with its coral FAB-style center button) is
 already consistent and unchanged.
 
-## 5. Responsive "phone frame" for desktop
+## 5. Full-width responsive layout for desktop
 
-Above a ~768px viewport width: constrain `ion-app` to a max-width of
-~430px, center it (`margin: 0 auto`), give `body` a neutral canvas
-background behind it, and add a subtle shadow + rounded corners to the
-app frame so it visually reads as "the phone app, viewed on a PC"
-rather than a stretched mobile layout. Implemented as a single global
-CSS media-query rule (in `global.scss` or `app.component.scss`) — no
-per-page changes. Below ~768px (real phones), behavior is unchanged.
+Revised after the first implementation pass: rather than a centered
+"phone frame," the app uses the full viewport width on desktop. The
+`home`/`explore` item grids use Ionic's built-in `ion-col` breakpoint
+sizes (`size="6" sizeMd="4" sizeLg="3" sizeXl="2"`) so more cards fit
+per row as the viewport widens — 2 columns on phones, up to 6 on large
+desktops. Toolbars, the searchbar, and the bottom tab bar simply
+stretch to the full width (no per-page changes needed there). Auth
+pages, `add-post`, and `profile` already cap their own content at a
+readable max-width (~360–420px) and center via `margin: 0 auto`, so
+they don't need extra desktop handling. No global "phone frame"
+container is used.
 
 ## Testing / verification
 
@@ -132,8 +136,9 @@ This is a visual/layout task — verified by running the dev server
   at phone width: consistent look, tokens applied, no regressions vs.
   current home/login appearance.
 - Explore: search + chip filtering actually filters the mock grid.
-- Desktop width (>768px): phone-frame behavior confirmed on at least
-  one page; confirm it doesn't clip content or break scrolling.
+- Desktop width (>768px): grids show additional columns (home,
+  explore) and the rest of the app fills the width without clipping or
+  breaking scrolling.
 - Existing unit tests (`ng test` / vitest) continue to pass — no
   component logic is meaningfully changed, but `item-card`/
   `category-chip` get real (currently trivial/default) spec files

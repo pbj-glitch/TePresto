@@ -1,0 +1,14 @@
+.category-chip {
+  --background: var(--tp-surface);
+  --color: var(--ion-color-dark);
+  border: var(--tp-card-border);
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+
+  &.active {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+    border-color: var(--ion-color-primary);
+  }
+}

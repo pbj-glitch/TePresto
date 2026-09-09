@@ -21,4 +21,22 @@
   --ion-card-background: #FAFAFA; /* Gris casi blanco para dar contraste sutil */
   --ion-toolbar-background: #FFFFFF;
   --ion-tab-bar-background: #FFFFFF;
+
+  /* Escala de espaciado */
+  --tp-space-xs: 4px;
+  --tp-space-sm: 8px;
+  --tp-space-md: 16px;
+  --tp-space-lg: 24px;
+  --tp-space-xl: 32px;
+
+  /* Escala de radios */
+  --tp-radius-sm: 8px;
+  --tp-radius-md: 16px;
+  --tp-radius-lg: 24px;
+
+  /* Superficies y bordes de tarjetas */
+  --tp-surface: #FAFAFA;
+  --tp-card-border: 1px solid #F0F0F0;
+  --tp-card-shadow: none;
+  --tp-text-muted: var(--ion-color-medium);
 }

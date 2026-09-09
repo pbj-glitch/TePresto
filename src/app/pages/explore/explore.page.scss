@@ -1,0 +1,21 @@
+ion-content {
+  --background: #ffffff;
+}
+
+.category-row {
+  display: flex;
+  gap: var(--tp-space-sm);
+  overflow-x: auto;
+  padding-bottom: var(--tp-space-md);
+  margin-bottom: var(--tp-space-sm);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--tp-text-muted);
+  margin-top: var(--tp-space-xl);
+}

@@ -1,13 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>explore</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-title color="primary" class="ion-text-center"><b>Explorar</b></ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="light">
+    <ion-searchbar
+      placeholder="Buscar en tu comunidad..."
+      (ionInput)="onSearch($event.detail.value)"
+    ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">explore</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="category-row">
+    @for (category of categories(); track category) {
+      <app-category-chip
+        [label]="category"
+        [active]="selectedCategory() === category"
+        (chipClick)="toggleCategory(category)"
+      />
+    }
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      @for (item of items(); track item.id) {
+        <ion-col size="6" sizeMd="4" sizeLg="3" sizeXl="2">
+          <app-item-card [item]="item" />
+        </ion-col>
+      } @empty {
+        <ion-col size="12">
+          <p class="empty-state">No encontramos nada con esos filtros.</p>
+        </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
 </ion-content>

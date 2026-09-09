@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { 
-  IonHeader, IonToolbar, IonTitle, IonContent, 
-  IonSearchbar, IonGrid, IonRow, IonCol, IonCard, 
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent,
+  IonSearchbar, IonGrid, IonRow, IonCol, IonCard,
   IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
-  IonBadge, IonButton 
+  IonButton
 } from '@ionic/angular';
 import { ItemService } from '../../services/item.service';
+import { ItemCardComponent } from '../../components/item-card/item-card.component';
 
 @Component({
   selector: 'app-home',
@@ -15,10 +16,10 @@ import { ItemService } from '../../services/item.service';
   standalone: true,
   imports: [
     CommonModule,
-    IonHeader, IonToolbar, IonTitle, IonContent, 
-    IonSearchbar, IonGrid, IonRow, IonCol, IonCard, 
+    IonHeader, IonToolbar, IonTitle, IonContent,
+    IonSearchbar, IonGrid, IonRow, IonCol, IonCard,
     IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
-    IonBadge, IonButton
+    IonButton, ItemCardComponent,
   ],
 })
 export class HomePage {
