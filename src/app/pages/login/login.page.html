@@ -1,0 +1,47 @@
+<ion-content class="auth-content" [fullscreen]="true">
+  <div class="auth-wrapper">
+    <h1 class="auth-title">TePresto</h1>
+    <p class="auth-subtitle">Inicia sesión para continuar</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-input
+          label="Correo"
+          labelPlacement="floating"
+          type="email"
+          formControlName="email"
+          autocomplete="email"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Contraseña"
+          labelPlacement="floating"
+          type="password"
+          formControlName="password"
+          autocomplete="current-password"
+        ></ion-input>
+      </ion-item>
+
+      @if (errorMessage()) {
+        <ion-text color="danger">
+          <p class="auth-error">{{ errorMessage() }}</p>
+        </ion-text>
+      }
+
+      <ion-button expand="block" type="submit" class="auth-submit" [disabled]="form.invalid || isSubmitting()">
+        @if (isSubmitting()) {
+          <ion-spinner name="dots"></ion-spinner>
+        } @else {
+          Iniciar sesión
+        }
+      </ion-button>
+    </form>
+
+    <a routerLink="/forgot-password" class="auth-link">¿Olvidaste tu contraseña?</a>
+    <p class="auth-switch">
+      ¿No tienes cuenta? <a routerLink="/register">Regístrate</a>
+    </p>
+  </div>
+</ion-content>

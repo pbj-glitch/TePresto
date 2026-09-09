@@ -1,0 +1,28 @@
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px;
+  text-align: center;
+
+  ion-avatar {
+    width: 96px;
+    height: 96px;
+    color: var(--ion-color-primary);
+    font-size: 96px;
+  }
+
+  h2 {
+    margin: 12px 0 0;
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    margin: 4px 0 24px;
+  }
+
+  ion-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
