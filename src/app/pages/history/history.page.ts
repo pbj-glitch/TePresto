@@ -20,7 +20,7 @@ interface HistoryGroup {
 
 const STATUS_COLOR: Record<HistoryStatus, string> = {
   Devuelto: 'success',
-  Activo: 'secondary',
+  Activo: 'info',
   Atrasado: 'danger',
 };
 

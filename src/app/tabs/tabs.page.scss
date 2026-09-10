@@ -1,7 +1,15 @@
 ion-tab-bar {
-  --background: #ffffff;
-  --border-color: #f0f0f0;
+  --background: var(--ion-tab-bar-background);
+  --border-color: var(--tp-border-color);
   height: 60px;
+}
+
+ion-tab-button {
+  font-size: 11px;
+
+  ion-label {
+    margin-top: 2px;
+  }
 }
 
 /* Estilo para el botón coral flotante '+' */

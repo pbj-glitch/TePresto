@@ -1,5 +1,5 @@
 ion-content {
-  --background: #ffffff;
+  --background: var(--ion-background-color);
 }
 
 .category-row {
@@ -8,6 +8,7 @@ ion-content {
   overflow-x: auto;
   padding-bottom: var(--tp-space-md);
   margin-bottom: var(--tp-space-sm);
+  mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 24px), transparent);
 
   &::-webkit-scrollbar {
     display: none;

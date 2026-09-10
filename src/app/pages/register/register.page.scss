@@ -6,7 +6,7 @@
 }
 
 .auth-title {
-  color: var(--ion-color-primary);
+  color: var(--tp-coral-text);
   font-weight: 700;
   margin-bottom: var(--tp-space-xs);
 }
@@ -18,6 +18,13 @@
 
 .auth-submit {
   margin-top: var(--tp-space-md);
+}
+
+.field-error {
+  text-align: left;
+  color: var(--ion-color-danger);
+  font-size: 0.8rem;
+  margin: var(--tp-space-xs) var(--tp-space-xs) var(--tp-space-sm);
 }
 
 .auth-error {

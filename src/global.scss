@@ -28,10 +28,26 @@
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
+ * TePresto ships its own hand-authored dark palette in
+ * `src/theme/variables.scss` (under `@media (prefers-color-scheme: dark)`),
+ * so Ionic's generic auto palette is intentionally not imported here —
+ * layering both caused unstyled tokens (dark/medium/tertiary/danger, and
+ * the global text/background colors) to leak in from Ionic's generic
+ * palette while only some pages patched their own local background.
  */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+/**
+ * Custom color: "info" (used for the "Activo" loan-history badge).
+ * Ionic wires the `color="X"` attribute to `--ion-color-base/-contrast/...`
+ * automatically only for its 9 built-in color names; a project-defined
+ * name needs this mapping written out by hand, per Ionic's own
+ * "create a new color" recipe.
+ */
+.ion-color-info {
+  --ion-color-base: var(--ion-color-info);
+  --ion-color-base-rgb: var(--ion-color-info-rgb);
+  --ion-color-contrast: var(--ion-color-info-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-info-contrast-rgb);
+  --ion-color-shade: var(--ion-color-info-shade);
+  --ion-color-tint: var(--ion-color-info-tint);
+}

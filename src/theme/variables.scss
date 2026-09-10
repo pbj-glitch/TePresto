@@ -2,23 +2,114 @@
 // https://ionicframework.com/docs/theming/
 :root {
   /* Color de Acento Principal: Coral */
-  --ion-color-primary: #FF6B6B; 
+  --ion-color-primary: #FF6B6B;
   --ion-color-primary-rgb: 255, 107, 107;
   --ion-color-primary-contrast: #FFFFFF;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #E05E5E;
   --ion-color-primary-tint: #FF7A7A;
 
-  /* Color Secundario o Destacados Suaves */
-  --ion-color-secondary: #4A90E2; 
-  --ion-color-success: #2ECC71; /* Badges de "Disponible" */
+  /* Color Secundario: Azul */
+  --ion-color-secondary: #4A90E2;
+  --ion-color-secondary-rgb: 74, 144, 226;
+  --ion-color-secondary-contrast: #FFFFFF;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #4180C7;
+  --ion-color-secondary-tint: #5C9CE6;
+
+  /* Estados: éxito / info / advertencia / peligro (badges de historial y disponibilidad) */
+  --ion-color-success: #189D5D;
+  --ion-color-success-rgb: 24, 157, 93;
+  --ion-color-success-contrast: #FFFFFF;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #158A51;
+  --ion-color-success-tint: #2FA76D;
+
+  --ion-color-info: #2E67B0;
+  --ion-color-info-rgb: 46, 103, 176;
+  --ion-color-info-contrast: #FFFFFF;
+  --ion-color-info-contrast-rgb: 255, 255, 255;
+  --ion-color-info-shade: #285B9B;
+  --ion-color-info-tint: #4376B8;
+
+  --ion-color-warning: #E68A1E;
+  --ion-color-warning-rgb: 230, 138, 30;
+  --ion-color-warning-contrast: #FFFFFF;
+  --ion-color-warning-contrast-rgb: 255, 255, 255;
+  --ion-color-warning-shade: #CB7A1A;
+  --ion-color-warning-tint: #E9963A;
+
+  --ion-color-danger: #C0392B;
+  --ion-color-danger-rgb: 192, 57, 43;
+  --ion-color-danger-contrast: #FFFFFF;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #A93123;
+  --ion-color-danger-tint: #C94C3F;
+
+  --ion-color-tertiary: #6C5CE7;
+  --ion-color-tertiary-rgb: 108, 92, 231;
+  --ion-color-tertiary-contrast: #FFFFFF;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #5F51CB;
+  --ion-color-tertiary-tint: #7B6CE9;
+
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 36, 40;
+  --ion-color-dark-contrast: #FFFFFF;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1E2023;
+  --ion-color-dark-tint: #383A3E;
+
+  --ion-color-medium: #6E7280;
+  --ion-color-medium-rgb: 110, 114, 128;
+  --ion-color-medium-contrast: #FFFFFF;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #616470;
+  --ion-color-medium-tint: #7D818C;
+
+  --ion-color-light: #F4F5F8;
+  --ion-color-light-rgb: 244, 245, 248;
+  --ion-color-light-contrast: #222428;
+  --ion-color-light-contrast-rgb: 34, 36, 40;
+  --ion-color-light-shade: #D7D8DA;
+  --ion-color-light-tint: #F5F6F9;
 
   /* Fondos Limpios (Predominio del Blanco) */
   --ion-background-color: #FFFFFF;
   --ion-background-color-rgb: 255, 255, 255;
-  
+  --ion-text-color: #1A1B1E;
+  --ion-text-color-rgb: 26, 27, 30;
+
+  /*
+   * Escala de "pasos" entre fondo y texto que ion-card / ion-item / ion-list
+   * usan internamente para textos secundarios (subtítulos, notas). El tema
+   * de Ionic normalmente la provee; como este proyecto define su propio
+   * --ion-text-color / --ion-background-color por modo, la generamos aquí
+   * en vez de dejar que cada componente caiga en su valor fijo de fallback
+   * (que no sabe si el fondo real es claro u oscuro).
+   */
+  --ion-color-step-50: color-mix(in srgb, var(--ion-text-color) 5%, var(--ion-background-color));
+  --ion-color-step-100: color-mix(in srgb, var(--ion-text-color) 10%, var(--ion-background-color));
+  --ion-color-step-150: color-mix(in srgb, var(--ion-text-color) 15%, var(--ion-background-color));
+  --ion-color-step-200: color-mix(in srgb, var(--ion-text-color) 20%, var(--ion-background-color));
+  --ion-color-step-250: color-mix(in srgb, var(--ion-text-color) 25%, var(--ion-background-color));
+  --ion-color-step-300: color-mix(in srgb, var(--ion-text-color) 30%, var(--ion-background-color));
+  --ion-color-step-350: color-mix(in srgb, var(--ion-text-color) 35%, var(--ion-background-color));
+  --ion-color-step-400: color-mix(in srgb, var(--ion-text-color) 40%, var(--ion-background-color));
+  --ion-color-step-450: color-mix(in srgb, var(--ion-text-color) 45%, var(--ion-background-color));
+  --ion-color-step-500: color-mix(in srgb, var(--ion-text-color) 50%, var(--ion-background-color));
+  --ion-color-step-550: color-mix(in srgb, var(--ion-text-color) 55%, var(--ion-background-color));
+  --ion-color-step-600: color-mix(in srgb, var(--ion-text-color) 60%, var(--ion-background-color));
+  --ion-color-step-650: color-mix(in srgb, var(--ion-text-color) 65%, var(--ion-background-color));
+  --ion-color-step-700: color-mix(in srgb, var(--ion-text-color) 70%, var(--ion-background-color));
+  --ion-color-step-750: color-mix(in srgb, var(--ion-text-color) 75%, var(--ion-background-color));
+  --ion-color-step-800: color-mix(in srgb, var(--ion-text-color) 80%, var(--ion-background-color));
+  --ion-color-step-850: color-mix(in srgb, var(--ion-text-color) 85%, var(--ion-background-color));
+  --ion-color-step-900: color-mix(in srgb, var(--ion-text-color) 90%, var(--ion-background-color));
+  --ion-color-step-950: color-mix(in srgb, var(--ion-text-color) 95%, var(--ion-background-color));
+
   /* Tarjetas y Contenedores */
-  --ion-card-background: #FAFAFA; /* Gris casi blanco para dar contraste sutil */
+  --ion-card-background: #FAFAFA;
   --ion-toolbar-background: #FFFFFF;
   --ion-tab-bar-background: #FFFFFF;
 
@@ -36,7 +127,58 @@
 
   /* Superficies y bordes de tarjetas */
   --tp-surface: #FAFAFA;
-  --tp-card-border: 1px solid #F0F0F0;
+  --tp-border-color: #F0F0F0;
+  --tp-card-border: 1px solid var(--tp-border-color);
   --tp-card-shadow: none;
   --tp-text-muted: var(--ion-color-medium);
+
+  /* Coral apto para texto (el primary de marca falla contraste AA como texto sobre blanco) */
+  --tp-coral-text: #C23B3B;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-color-success: #2FA76D;
+    --ion-color-success-shade: #29925F;
+    --ion-color-success-tint: #44B37E;
+
+    --ion-color-info: #6FA3E0;
+    --ion-color-info-contrast: #0B1220;
+    --ion-color-info-shade: #618FC4;
+    --ion-color-info-tint: #7EACE3;
+
+    --ion-color-danger: #E0645A;
+    --ion-color-danger-shade: #C4584F;
+    --ion-color-danger-tint: #E47A71;
+
+    --ion-color-dark: #F4F5F8;
+    --ion-color-dark-contrast: #222428;
+    --ion-color-dark-shade: #D7D8DA;
+    --ion-color-dark-tint: #F5F6F9;
+
+    --ion-color-medium: #9AA0AC;
+    --ion-color-medium-contrast: #14151A;
+    --ion-color-medium-shade: #888E99;
+    --ion-color-medium-tint: #A7ACB7;
+
+    --ion-color-light: #2A2C31;
+    --ion-color-light-contrast: #F4F5F8;
+    --ion-color-light-shade: #242529;
+    --ion-color-light-tint: #3A3C41;
+
+    --ion-background-color: #17181B;
+    --ion-background-color-rgb: 23, 24, 27;
+    --ion-text-color: #F2F2F4;
+    --ion-text-color-rgb: 242, 242, 244;
+
+    --ion-card-background: #1E1F23;
+    --ion-toolbar-background: #1B1C20;
+    --ion-tab-bar-background: #1B1C20;
+
+    --tp-surface: #1E1F23;
+    --tp-border-color: #2C2D32;
+    --tp-card-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+
+    --tp-coral-text: #FF9B9B;
+  }
 }

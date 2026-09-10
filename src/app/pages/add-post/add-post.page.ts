@@ -3,10 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import {
   IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, IonTextarea,
-  IonSelect, IonSelectOption, IonButton, IonIcon,
+  IonSelect, IonSelectOption, IonButton,
 } from '@ionic/angular';
-import { addIcons } from 'ionicons';
-import { cameraOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-add-post',
@@ -15,7 +13,7 @@ import { cameraOutline } from 'ionicons/icons';
   imports: [
     CommonModule, ReactiveFormsModule,
     IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, IonTextarea,
-    IonSelect, IonSelectOption, IonButton, IonIcon,
+    IonSelect, IonSelectOption, IonButton,
   ],
 })
 export class AddPostPage {
@@ -26,19 +24,16 @@ export class AddPostPage {
   form = this.fb.nonNullable.group({
     title: ['', [Validators.required]],
     category: ['', [Validators.required]],
-    guaranteePrice: ['', [Validators.required]],
+    guaranteePrice: ['', [Validators.required, Validators.min(1)]],
     description: ['', [Validators.required]],
   });
 
   submitted = signal(false);
 
-  constructor() {
-    addIcons({ cameraOutline });
-  }
-
   onSubmit(): void {
     if (this.form.invalid) return;
     // La publicación real (Supabase) todavía no está conectada; solo maquetado.
     this.submitted.set(true);
+    this.form.reset();
   }
 }

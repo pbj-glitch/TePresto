@@ -4,26 +4,11 @@
   padding: var(--tp-space-md) 0;
 }
 
-.photo-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--tp-space-xs);
-  width: 100%;
-  height: 140px;
-  border: 2px dashed #e0e0e0;
-  border-radius: var(--tp-radius-md);
-  background: var(--tp-surface);
-  color: var(--tp-text-muted);
-  font-size: 0.85rem;
-  margin-bottom: var(--tp-space-lg);
-  cursor: pointer;
-
-  ion-icon {
-    font-size: 28px;
-    color: var(--ion-color-primary);
-  }
+.field-error {
+  text-align: left;
+  color: var(--ion-color-danger);
+  font-size: 0.8rem;
+  margin: var(--tp-space-xs) var(--tp-space-xs) var(--tp-space-sm);
 }
 
 .post-submit {

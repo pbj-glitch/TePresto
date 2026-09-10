@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { ExplorePage } from './explore.page';
 import { ItemService } from '../../services/item.service';
 
@@ -8,6 +9,10 @@ describe('ExplorePage', () => {
   let itemService: ItemService;
 
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [ExplorePage],
+      providers: [provideRouter([])],
+    });
     fixture = TestBed.createComponent(ExplorePage);
     component = fixture.componentInstance;
     itemService = TestBed.inject(ItemService);

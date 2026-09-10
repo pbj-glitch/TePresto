@@ -6,15 +6,13 @@
 
 <ion-content class="ion-padding">
   <div class="post-wrapper">
-    <button type="button" class="photo-placeholder">
-      <ion-icon name="camera-outline"></ion-icon>
-      <span>Agregar foto</span>
-    </button>
-
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <ion-item>
         <ion-input label="Título" labelPlacement="floating" formControlName="title"></ion-input>
       </ion-item>
+      @if (form.controls.title.invalid && form.controls.title.touched) {
+        <p class="field-error">Ponle un título a tu objeto.</p>
+      }
 
       <ion-item>
         <ion-select label="Categoría" labelPlacement="floating" formControlName="category">
@@ -23,6 +21,9 @@
           }
         </ion-select>
       </ion-item>
+      @if (form.controls.category.invalid && form.controls.category.touched) {
+        <p class="field-error">Selecciona una categoría.</p>
+      }
 
       <ion-item>
         <ion-input
@@ -32,6 +33,15 @@
           formControlName="guaranteePrice"
         ></ion-input>
       </ion-item>
+      @if (form.controls.guaranteePrice.invalid && form.controls.guaranteePrice.touched) {
+        <p class="field-error">
+          @if (form.controls.guaranteePrice.hasError('required')) {
+            Ingresa un precio de garantía.
+          } @else {
+            La garantía debe ser mayor a $0.
+          }
+        </p>
+      }
 
       <ion-item>
         <ion-textarea
@@ -41,9 +51,12 @@
           autoGrow="true"
         ></ion-textarea>
       </ion-item>
+      @if (form.controls.description.invalid && form.controls.description.touched) {
+        <p class="field-error">Cuéntales a tus vecinos de qué se trata.</p>
+      }
 
       @if (submitted()) {
-        <p class="post-success">¡Publicación creada! (función aún no conectada)</p>
+        <p class="post-success">¡Publicación guardada! Tus vecinos ya pueden verla y solicitarla.</p>
       }
 
       <ion-button expand="block" type="submit" class="post-submit" [disabled]="form.invalid">

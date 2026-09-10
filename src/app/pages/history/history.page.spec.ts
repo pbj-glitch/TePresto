@@ -22,7 +22,7 @@ describe('HistoryPage', () => {
 
   it('maps each status to a badge color', () => {
     expect(component.statusColor('Devuelto')).toBe('success');
-    expect(component.statusColor('Activo')).toBe('secondary');
+    expect(component.statusColor('Activo')).toBe('info');
     expect(component.statusColor('Atrasado')).toBe('danger');
   });
 });

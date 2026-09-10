@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import {
   IonHeader, IonToolbar, IonTitle, IonContent,
   IonSearchbar, IonGrid, IonRow, IonCol, IonCard,
@@ -15,7 +16,7 @@ import { ItemCardComponent } from '../../components/item-card/item-card.componen
   styleUrls: ['./home.page.scss'],
   standalone: true,
   imports: [
-    CommonModule,
+    CommonModule, RouterLink,
     IonHeader, IonToolbar, IonTitle, IonContent,
     IonSearchbar, IonGrid, IonRow, IonCol, IonCard,
     IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,

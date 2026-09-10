@@ -9,4 +9,5 @@ export interface Item {
   status: 'Disponible' | 'Ocupado';
   imageUrl: string;
   category: string;
+  description: string;
 }

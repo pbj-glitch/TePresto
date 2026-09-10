@@ -1,14 +1,6 @@
-<ion-card class="product-card">
-  <div class="image-container">
-    <div class="image-placeholder" [class.show]="imageError()">
-      <ion-icon name="pricetag-outline"></ion-icon>
-    </div>
-    <img
-      [src]="item().imageUrl"
-      [alt]="item().title"
-      [class.hidden]="imageError()"
-      (error)="onImageError()"
-    />
+<ion-card class="product-card" button="true" [routerLink]="['/item', item().id]">
+  <div class="image-container" [style.background]="'rgba(var(--ion-color-' + categoryColorVar() + '-rgb), 0.14)'">
+    <ion-icon [name]="categoryIcon()" [style.color]="'var(--ion-color-' + categoryColorVar() + ')'"></ion-icon>
     <ion-badge
       [color]="item().status === 'Disponible' ? 'success' : 'medium'"
       class="status-badge"

@@ -13,6 +13,9 @@
           autocomplete="name"
         ></ion-input>
       </ion-item>
+      @if (form.controls.fullName.invalid && form.controls.fullName.touched) {
+        <p class="field-error">Ingresa tu nombre.</p>
+      }
 
       <ion-item>
         <ion-input
@@ -23,6 +26,15 @@
           autocomplete="email"
         ></ion-input>
       </ion-item>
+      @if (form.controls.email.invalid && form.controls.email.touched) {
+        <p class="field-error">
+          @if (form.controls.email.hasError('required')) {
+            Ingresa tu correo.
+          } @else {
+            Ingresa un correo válido.
+          }
+        </p>
+      }
 
       <ion-item>
         <ion-input
@@ -33,6 +45,15 @@
           autocomplete="new-password"
         ></ion-input>
       </ion-item>
+      @if (form.controls.password.invalid && form.controls.password.touched) {
+        <p class="field-error">
+          @if (form.controls.password.hasError('required')) {
+            Ingresa una contraseña.
+          } @else {
+            Debe tener al menos 6 caracteres.
+          }
+        </p>
+      }
 
       <ion-item>
         <ion-input
@@ -43,6 +64,9 @@
           autocomplete="new-password"
         ></ion-input>
       </ion-item>
+      @if (form.controls.confirmPassword.invalid && form.controls.confirmPassword.touched) {
+        <p class="field-error">Confirma tu contraseña.</p>
+      }
 
       @if (form.errors?.['passwordMismatch'] && form.get('confirmPassword')?.touched) {
         <ion-text color="danger">

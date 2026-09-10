@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ item()?.title ?? 'Detalle' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (item(); as currentItem) {
+    <div
+      class="hero"
+      [style.background]="'rgba(var(--ion-color-' + categoryColorVar() + '-rgb), 0.14)'"
+    >
+      <ion-icon [name]="categoryIcon()" [style.color]="'var(--ion-color-' + categoryColorVar() + ')'"></ion-icon>
+      <ion-badge
+        [color]="currentItem.status === 'Disponible' ? 'success' : 'medium'"
+        class="status-badge"
+      >
+        {{ currentItem.status }}
+      </ion-badge>
+    </div>
+
+    <div class="detail-wrapper">
+      <p class="category-label">{{ currentItem.category }}</p>
+      <h1>{{ currentItem.title }}</h1>
+      <p class="meta-row">{{ currentItem.distance }} · {{ currentItem.ownerName }} · ⭐ {{ currentItem.rating }}</p>
+
+      <p class="description">{{ currentItem.description }}</p>
+
+      <div class="guarantee-row">
+        <span>Precio de garantía</span>
+        <strong>${{ currentItem.guaranteePrice | number }}</strong>
+      </div>
+
+      @if (currentItem.status === 'Ocupado') {
+        <ion-button expand="block" disabled="true" class="request-button">
+          No disponible en este momento
+        </ion-button>
+        <p class="request-hint">{{ currentItem.ownerName }} ya prestó este objeto. Te avisaremos cuando vuelva a estar disponible.</p>
+      } @else if (requested()) {
+        <ion-button expand="block" class="request-button requested">
+          <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+          Solicitud enviada
+        </ion-button>
+        <p class="request-hint">{{ currentItem.ownerName }} te responderá pronto para coordinar la entrega.</p>
+      } @else {
+        <ion-button expand="block" (click)="requestLoan()" class="request-button">
+          Solicitar préstamo
+        </ion-button>
+        <p class="request-hint">Le llegará una notificación a {{ currentItem.ownerName }} con tu solicitud.</p>
+      }
+    </div>
+  } @else {
+    <div class="not-found">
+      <ion-icon name="cube-outline"></ion-icon>
+      <p>No encontramos este objeto. Puede que ya no esté disponible.</p>
+      <ion-button routerLink="/tabs/home" fill="outline">Volver al inicio</ion-button>
+    </div>
+  }
+</ion-content>
