@@ -87,3 +87,20 @@ Al entregar este documento, el grupo confirma el compromiso de todos sus integra
 **Responsable del grupo:** Maria Poddubnaya  
 **Fecha de firma:** 31/08/2026
 
+
+## 💻 Ejecución en Entorno Local
+
+Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
+
+### Requisitos Previos
+* Tener instalado **Node.js** (versión 18 o superior).
+* Tener instalado **Ionic CLI** de forma global:
+  ```bash
+  npm install -g @ionic/cli
+
+git clone [https://github.com/pbj-glitch/TePresto.git](https://github.com/pbj-glitch/TePresto.git)
+cd TePresto
+
+npm install
+
+ionic serve
